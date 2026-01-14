@@ -12,4 +12,4 @@ RUN uv sync --locked --no-cache
 
 # Run the application.
 EXPOSE 8000
-CMD ["/app/.venv/bin/hypercorn", "main:app", "--bind", "0.0.0.0:8000"]
+CMD ["sh", "-c", "/app/.venv/bin/hypercorn main:app --bind 0.0.0.0:$PORT"]
