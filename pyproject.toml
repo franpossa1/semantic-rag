@@ -1,0 +1,13 @@
+[project]
+name = "semantic-rag"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "fastapi[standard]>=0.128.0",
+]
+
+[project.scripts]
+dev = "fastapi dev main:app"
+start = "fastapi run main:app"
