@@ -8,13 +8,20 @@ dependencies = [
     "chromadb>=1.4.1",
     "fastapi[standard]>=0.128.0",
     "hypercorn>=0.18.0",
+    "matplotlib>=3.10.8",
     "numpy>=2.4.1",
     "openai>=2.15.0",
+    "pandas>=3.0.0",
     "pydantic>=2.12.5",
     "pypdf2>=3.0.1",
     "python-multipart>=0.0.21",
+    "sentence-transformers>=5.2.0",
 ]
 
 [project.scripts]
 dev = "fastapi dev main:app"
 start = "fastapi run main:app"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["src.*"]
