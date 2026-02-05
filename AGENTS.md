@@ -154,3 +154,9 @@ pytest tests/test_specific.py::test_function_name -v
 - App runs on `$PORT` environment variable (default 8000)
 - Uses Hypercorn: `hypercorn main:app --bind 0.0.0.0:$PORT`
 - All dependencies must be in `pyproject.toml`
+
+
+## Skills
+- In the `.agents` or `.windsurf` folders you can find skills that can be used to extend the capabilities of the agents.
+- To add a skill, use the command `npx skills add <skill-url>`
+- To remove a skill, use the command `npx skills remove <skill-name>`
