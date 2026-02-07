@@ -144,7 +144,10 @@ venv.bak/
 .mypy_cache/
 .dmypy.json
 dmypy.json
-/docs
+ 
+# Dont include the ChromaDB data
+/data 
+/data/*
 # Pyre type checker
 .pyre/
 

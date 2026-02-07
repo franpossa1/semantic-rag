@@ -105,7 +105,31 @@ python fetch_docs.py --force
 
 This will download ~340 documentation files to `raw/docs/` (gitignored).
 
-### 4. Run Development Server
+### 4. Ingest Documentation into Vector Database
+
+Process the raw documentation into searchable chunks with embeddings:
+
+```bash
+# Ingest all libraries into ChromaDB
+python ingest_docs.py
+
+# Or ingest a specific library
+python ingest_docs.py --library fastapi
+
+# Clear existing data and re-ingest everything
+python ingest_docs.py --clear
+
+# Check database statistics
+python ingest_docs.py --stats
+```
+
+This creates the `technical_docs` collection in ChromaDB with:
+- **~1,400 chunks** (1407 total documents)
+- **Embeddings**: `all-MiniLM-L6-v2` (384 dimensions)
+- **Metadata**: library, source_file, section, has_code, etc.
+- **Chunking strategy**: Split by headers, max 4000 chars, preserve code blocks
+
+### 5. Run Development Server
 
 ```bash
 # Using uv
@@ -117,7 +141,7 @@ fastapi dev main:app
 
 The API will be available at `http://localhost:8000`
 
-### 5. Access API Documentation
+### 6. Access API Documentation
 
 Open your browser:
 - Swagger UI: `http://localhost:8000/docs`
